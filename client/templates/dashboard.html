@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h3 class="mb-1">Selamat datang, {{ email }} 👋</h3>
+<p class="text-muted mb-4">Pilih fitur yang ingin kamu gunakan:</p>
+
+<div class="row g-3">
+    <div class="col-md-6">
+        <div class="protocol-card">
+            <span class="protocol-tag">TCP :9000</span>
+            <h5>📁 File Transfer</h5>
+            <p class="text-muted">Upload dan download file menggunakan protokol TCP.</p>
+            <a href="{{ url_for('upload_page') }}" class="btn btn-primary">Buka</a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="protocol-card">
+            <span class="protocol-tag udp">UDP :9001</span>
+            <h5>🎬 Video Streaming</h5>
+            <p class="text-muted">Streaming video menggunakan protokol UDP.</p>
+            <a href="{{ url_for('stream_page') }}" class="btn btn-primary">Buka</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

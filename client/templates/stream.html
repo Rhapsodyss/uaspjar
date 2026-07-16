@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Streaming{% endblock %}
+{% block content %}
+<h3>🎬 Video Streaming (UDP)</h3>
+<!-- <p class="text-muted">
+    Video dikirim lewat <code>udp_server.py</code>. Untuk pemutaran di browser, video
+    ditampilkan lewat HTTP; pembuktian protokol UDP murni ada di <code>udp_client.py</code>.
+</p> -->
+
+{% if videos %}
+<div class="row g-3">
+    {% for video in videos %}
+    <div class="video-card">
+        <h3>{{ video }}</h3>
+        
+        <video width="640" height="360" controls preload="none">
+            <source src="{{ url_for('serve_video', filename=video) }}" type="video/mp4">
+            Browser Anda tidak mendukung HTML5 video.
+        </video>
+        
+        <p>python udp_client.py {{ video }}</p>
+    </div>
+{% endfor %}
+</div>
+{% else %}
+<p class="text-muted">Belum ada video di folder <code>videos/</code>.</p>
+{% endif %}
+{% endblock %}

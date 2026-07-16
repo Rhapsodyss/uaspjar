@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}File Transfer{% endblock %}
+{% block content %}
+<h3>📁 File Transfer (TCP)</h3>
+<!-- <p class="text-muted">
+    File yang kamu kirim diteruskan ke <code>tcp_server.py</code> lewat protokol TCP.
+</p> -->
+
+<form method="POST" action="{{ url_for('upload_action') }}" enctype="multipart/form-data" class="mb-4">
+    <div class="input-group">
+        <input type="file" name="file" class="form-control" required>
+        <button type="submit" class="btn btn-primary">Kirim via TCP</button>
+    </div>
+</form>
+
+<!-- <h5>File yang tersimpan di server:</h5>
+{% if files %}
+    {% for f in files %}
+        {% if not f.startswith('_tmp_') %}
+        <div class="file-item">
+            <span>{{ f }}</span>
+            <a href="{{ url_for('download_action', filename=f) }}" class="btn btn-sm btn-outline-primary">Download</a>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% else %}
+<p class="text-muted">Belum ada file.</p> -->
+{% endif %}
+{% endblock %}

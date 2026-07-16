@@ -1,0 +1,4 @@
+
+SERVER_HOST = "10.210.242.190"   # <-- GANTI dengan IP VM VirtualBox kamu
+TCP_PORT = 9000
+UDP_PORT = 9001
