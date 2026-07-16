@@ -1,4 +1,4 @@
-# Client Application - Sistem Notifikasi Email
+# Client Application 
 
 ## Deskripsi Proyek
 
